@@ -1,7 +1,9 @@
+import { Observable , Subscriber, Subscription} from 'rxjs';
 import { AddrecipeService } from './services/addrecipe.service';
-import { Schema, Categ } from './models/schema';
+import { Schema, Categ, Cata, Getting } from './models/schema';
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from './services/category.service'
+
 
 @Component({
   selector: 'app-product-management',
@@ -23,10 +25,16 @@ export class ProductManagementComponent {
 
   }
 
+
+
   categ: Categ={
     category:''
 
   }
+
+  travelArray: Cata[];
+
+  getting: Getting[];
 
   selectedCategoriey: string = '';
 
@@ -34,23 +42,29 @@ export class ProductManagementComponent {
 
   constructor(private addrecipeService: AddrecipeService, private addcategoryService: CategoryService) { }
 
-  ngOnInit() {
-
-    this.addrecipeService.getItems().subscribe(items=>{    // service kay through observable data get hora hay database say or phr subscribe data show krwanay mein madad kr raha hay
-      //console.log(items);
-      this.recipe=this.recipe;// ab html mein data access kr sktay hain
-      //console.log(this.items);
-    })
-
-    this.addcategoryService.getItems().subscribe(items=>{    // service kay through observable data get hora hay database say or phr subscribe data show krwanay mein madad kr raha hay
-      //console.log(items);
-      this.categ=this.categ;// ab html mein data access kr sktay hain
-      //console.log(this.items);
-    })
+  ngOnInit() { 
+          var x = this.addcategoryService.getItems();
+    x.subscribe( items=> {
+        this.travelArray=[];
+      items.forEach(element=>{
+    
+        this.travelArray.push( element as Cata );;
+  
+      });
+    });
 
 
+    this.addrecipeService.getItems().subscribe( items=> {
+        this.getting=[];
+      items.forEach(element=>{
+    
+        this.getting.push( element as Getting );;
+  
+      });
+    });
+  
   }
-
+ 
   //event handler for the select element's change event
   selectChangeHandler (event: any) {
     //update the ui

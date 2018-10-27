@@ -19,16 +19,13 @@ export class AddrecipeService {
   constructor(public afs:AngularFirestore) { 
 
     this.reipesCollection=this.afs.collection('recipes');
+    
+
+    this.recipes=this.afs.collection("recipes").valueChanges();
 
     //this.recipes=this.afs.collection('recipes').valueChanges(); //.value will return the collection as a observabe but not id so we have to write getMethod
 
-    this.recipes=this.afs.collection('recipes').snapshotChanges().pipe(map(changes=>{
-      return changes.map(a=>{
-        const data=a.payload.doc.data() as Schema;
-        data.name=a.payload.doc.id;
-        return data;
-      });
-    }));
+    
  
   }
 

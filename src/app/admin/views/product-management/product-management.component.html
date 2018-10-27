@@ -41,93 +41,33 @@
 								<label for="selectAll"></label>
 							</span>
             </th>
-            <th>Products</th>
+            <th>Name of Ingredient</th>
 
 
-            <th>Price</th>
+            <th>Calories</th>
             <th>Actions</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
+          <tr  *ngFor="let item of getting"  >
             <td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
             </td>
-            <td> <a href="#">Martin Blank</a></td>
+            <td> <a href="#">{{item.name}}</a></td>
 
 
-            <td>$20</td>
+            <td>{{item.calories}}</td>
             <td>
               <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
               <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
           </tr>
-          <tr>
-            <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox2" name="options[]" value="1">
-								<label for="checkbox2"></label>
-							</span>
-            </td>
-            <td> <a href="#">Martin Blank</a></td>
-
-
-            <td>$20</td>
-            <td>
-              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox3" name="options[]" value="1">
-								<label for="checkbox3"></label>
-							</span>
-            </td>
-            <td> <a href="#">Martin Blank</a></td>
-
-
-            <td>$20</td>
-            <td>
-              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox4" name="options[]" value="1">
-								<label for="checkbox4"></label>
-							</span>
-            </td>
-            <td> <a href="#">Martin Blank</a></td>
-
-            <td>$20</td>
-            <td>
-              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox5" name="options[]" value="1">
-								<label for="checkbox5"></label>
-							</span>
-            </td>
-            <td> <a href="#">Martin Blank</a></td>
-
-
-            <td>$20</td>
-            <td>
-              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-            </td>
-          </tr>
+         
+   
+     
           </tbody>
         </table>
         <div class="clearfix">
@@ -158,13 +98,13 @@
         <div class="modal-body">
 
           <div class="dropdown show">
-              <h5><span>Select Categoriey</span></h5>
-              <select (change)="selectChangeHandler($event)">
-                  <option value="Bulk">Bulk</option>
-                  <option value="Dried Fruit">Dried Fruit</option>
-                  
-              </select>
-              <h5><span>Categoriey: </span><b>{{selectedCategoriey}}</b></h5>
+              <h5><span>Select Category</span></h5>
+             
+                <ul *ngFor="let item of travelArray" class = "collection" >
+                  <li>{{item.category}}</li>
+                </ul>
+
+             
           </div>
             
         

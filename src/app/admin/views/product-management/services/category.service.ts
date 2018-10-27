@@ -4,32 +4,34 @@ import { Categ} from '../models/schema';
 
 import { Observable } from 'rxjs';
 
-import { map } from 'rxjs/operators';
-
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class CategoryService {
   categoriesCollection: AngularFirestoreCollection<Categ>;
   categories: Observable<Categ[]>
 
-  constructor(public afs:AngularFirestore) { 
+  constructor(public afss:AngularFirestore) { 
 
-    this.categoriesCollection=this.afs.collection('categories');
+    
 
-    //this.recipes=this.afs.collection('recipes').valueChanges(); //.value will return the collection as a observabe but not id so we have to write getMethod
+    this.categoriesCollection=this.afss.collection('categories');
 
-    this.categories=this.afs.collection('categories').snapshotChanges().pipe(map(changes=>{
-      return changes.map(a=>{
-        const data=a.payload.doc.data() as Categ;
-        data.category=a.payload.doc.id;
-        return data;
-      });
-    }));
-  }
+    this.categories=this.afss.collection("categories").valueChanges();
+
+    // this.categoriesCollection=this.afss.collection('categories', ref => ref.orderBy('title', 'desc'));
+
+    // this.categories=this.afss.collection('categories').snapshotChanges().pipe(map(changes=>{
+    //   return changes.map(a=>{
+    //     const data=a.payload.doc.data() as Categ;
+    //     data.category=a.payload.doc.cate;
+    //     return data;
+    //   });
+    // }));
+  }  
 
   getItems(){
     return this.categories;
