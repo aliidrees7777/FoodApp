@@ -1,0 +1,14 @@
+[debug] [2018-10-26T21:25:28.018Z] ----------------------------------------------------------------------
+[debug] [2018-10-26T21:25:28.030Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Muhammad Ali Idrees\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js open
+[debug] [2018-10-26T21:25:28.032Z] CLI Version:   6.0.0
+[debug] [2018-10-26T21:25:28.032Z] Platform:      win32
+[debug] [2018-10-26T21:25:28.032Z] Node Version:  v10.10.0
+[debug] [2018-10-26T21:25:28.037Z] Time:          Sat Oct 27 2018 02:25:28 GMT+0500 (Pakistan Standard Time)
+[debug] [2018-10-26T21:25:28.038Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-26T21:25:28.765Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-26T21:25:28.828Z] > authorizing via signed-in user
+[debug] [2018-10-26T21:25:28.829Z] [iam] checking project foodapp-b5ef2 for permissions ["firebase.projects.get"]
+[debug] [2018-10-26T21:25:28.842Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/foodapp-b5ef2:testIamPermissions  
+
+[debug] [2018-10-26T21:25:31.638Z] <<< HTTP RESPONSE 200

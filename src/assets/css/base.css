@@ -1,0 +1,19 @@
+@import url("../../assets/css/animate.min.css"); 								/* Animate */
+@import url("../../assets/css/bootstrap.min.css"); 								/* Main Bootstrap */
+@import url("../../assets/css/menu.css");										/* Menu styles */
+@import url("../../assets/css/style.css");										/* Main theme styles */
+@import url("../../assets/css/responsive.css");									/* Responsive */
+@import url("../../assets/css/elegant_font/elegant_font.min.css");				/* Icon pack */
+@import url("../../assets/css/fontello/css/fontello.min.css");					/* Icon pack */
+@import url("../../assets/css/magnific-popup.css");								/* Lightbox & dialog script */
+@import url("../../assets/css/pop_up.css");										/* Popup Advertising */
+@import url("../../assets/css/custom.css");										/* Your custom css in order to apply updates easly */
+
+/*
+How to change colors
+1) uncomment one of the color variation below
+DONE!
+*/
+
+/*@import url("color_scheme.css");					 	 			Your color scheme*/
+
